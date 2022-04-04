@@ -30,7 +30,7 @@ jobs:
           key: ${{ secrets.KEY }}
           port: ${{ secrets.PORT }}
           script: |
-            whoami
-            ls -al
+            echo 'Welcome to my server'
             cd /home/cd_assignment
-            ls
+            git pull
+            systemctl restart cd
