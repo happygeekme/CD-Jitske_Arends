@@ -1,0 +1,1 @@
+[![run tests and publish](https://github.com/happygeekme/CD-Jitske_Arends/actions/workflows/run-test_publish.yml/badge.svg)](https://github.com/happygeekme/CD-Jitske_Arends/actions/workflows/run-test_publish.yml)
