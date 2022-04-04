@@ -19,8 +19,9 @@ jobs:
         run: pytest
 
   publish:
+    runs-on: ubuntu-20.04
     needs: run-tests
-
+    steps:
     - name: multiple command
         uses: appleboy/ssh-action@master
         with:
