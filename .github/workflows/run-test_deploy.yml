@@ -1,10 +1,11 @@
-name: run tests and publish
+name: run tests and deploy
 
-# Run this workflow whenever something new is pushed.
 on: push
+
 jobs:
   run-tests:
     runs-on: ubuntu-20.04
+    
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -12,17 +13,18 @@ jobs:
         uses: actions/setup-python@v2
         # Specify some input for this particular action
         with:
-          python-version: '3.8.6'
+          python-version: '3.10'
       - name: Install Dependencies
         run: pip install -r requirements.txt
       - name: Run tests
         run: pytest
 
-  publish:
+  deploy:
     needs: run-tests
+    runs-on: ubuntu-latest
     steps:
-    - name: SSH Remote Commands
-      uses: appleboy/ssh-action@v0.1.4
+      - name: SSH Remote Commands
+        uses: appleboy/ssh-action@v0.1.4
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
