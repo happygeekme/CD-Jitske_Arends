@@ -1,10 +1,6 @@
 name: run tests and deploy
 
-on: 
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+on: push
 
 jobs:
   run-tests:
@@ -36,5 +32,6 @@ jobs:
           script: |
             echo 'Welcome to my server'
             cd /home/cd
+            echo 'Now in home/cd'
             git pull
             systemctl restart cd_assignment
