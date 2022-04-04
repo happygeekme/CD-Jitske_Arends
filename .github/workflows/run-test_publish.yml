@@ -21,8 +21,8 @@ jobs:
   publish:
     needs: run-tests
     steps:
-    - name: multiple command
-        uses: appleboy/ssh-action@master
+    - name: SSH Remote Commands
+      uses: appleboy/ssh-action@v0.1.4
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
