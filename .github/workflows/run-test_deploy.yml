@@ -37,4 +37,4 @@ jobs:
             echo 'Welcome to my server'
             cd /home/cd
             git pull
-            systemctl restart cd
+            systemctl restart cd_assignment
